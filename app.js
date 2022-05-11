@@ -94,15 +94,6 @@ app.get('/timeline', async(req, res)=>{
     }
 })
 
-app.get('/positions', async(req, res)=>{
-    try{
-        const positions = await alpaca.getPositions();
-        res.json(positions)
-    }catch(e){
-        res.send('err')
-    }
-})
-
 app.get('/randtickers', async(req,res)=>{
     try{
         const rand1 = Math.floor(stocklist.length * Math.random());
